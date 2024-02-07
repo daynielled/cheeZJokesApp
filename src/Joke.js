@@ -3,18 +3,15 @@ import "./Joke.css";
 
 /** A single joke, along with vote up/down buttons. */
 
-class Joke extends Component {
-  render() {
-    const { id, vote, votes, text } = this.props;
-
+function Joke({ id, vote, votes, text }){
     return (
       <div className="Joke">
         <div className="Joke-votearea">
-          <button onClick={evt => vote(id, +1)}>
+          <button onClick={() => vote(id, +1)}>
             <i className="fas fa-thumbs-up" />
           </button>
 
-          <button onClick={evt => vote(id, -1)}>
+          <button onClick={() => vote(id, -1)}>
             <i className="fas fa-thumbs-down" />
           </button>
 
@@ -25,6 +22,6 @@ class Joke extends Component {
       </div>
     );
   }
-}
+
 
 export default Joke;
